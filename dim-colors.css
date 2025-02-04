@@ -1,0 +1,412 @@
+/*************************  btn  ****************************/
+
+.btn-purple{
+    background-color: hsl(261, 51%, 51%);
+    color: var(--bs-light);
+}
+.btn-purple:hover{
+    background-color: hsl(261, 51%, 40%);
+    color: var(--bs-light);
+}
+.btn-indigo{
+    background-color: hsl(263, 90%, 51%);
+    color: var(--bs-light);
+}
+.btn-indigo:hover{
+    background-color: hsl(263, 90%, 40%);
+    color: var(--bs-light);
+}
+.btn-pink{
+    background-color: hsl(330, 67%, 52%);
+    color: var(--bs-light);
+}
+.btn-pink:hover{
+    background-color: hsl(330, 67%, 43%);
+    color: var(--bs-light);
+}
+.btn-orange{
+    background-color: hsl(27, 98%, 54%);
+    color: var(--bs-grey-dark);
+}
+.btn-orange:hover{
+    background-color: hsl(27, 98%, 44%);
+    color: var(--bs-dark);
+}
+.btn-teal{
+    background-color: hsl(162, 73%, 46%);
+    color: var(--bs-light);
+}
+.btn-teal:hover{
+    background-color: hsl(162, 73%, 39%);
+    color: var(--bs-light);
+}
+
+.btn-blue{
+    background-color: hsl(216, 98%, 53%);
+    color: var(--bs-light);
+}
+.btn-blue:hover{
+    background-color: hsl(216, 98%, 42%);
+    color: var(--bs-light);
+}
+.btn-red{
+    background-color: hsl(354, 70%, 54%);
+    color: var(--bs-light);
+}
+.btn-red:hover{
+    background-color: hsl(354, 70%, 45%);
+    color: var(--bs-light);
+}
+.btn-yellow{
+    background-color: hsl(45, 100%, 51%);
+    color: var(--bs-dark);
+}
+.btn-yellow:hover{
+    background-color: hsl(45, 100%, 61%);
+    color: var(--bs-dark);
+}
+.btn-green{
+    background-color: hsl(152, 69%, 31%);
+    color: var(--bs-light);
+}
+.btn-green:hover{
+    background-color: hsl(152, 69%, 27%) ;
+    color: var(--bs-light);
+}
+.btn-cyan{
+    background-color: hsl(190, 90%, 50%);
+    color: var(--bs-dark);
+}
+.btn-cyan:hover{
+    background-color: hsl(190, 88%, 61%);
+    color: var(--bs-dark);
+}
+.btn-white{
+    background-color: hsl(0, 0%, 100%);
+    color: var(--bs-dark);
+}
+.btn-white:hover{
+    background-color: hsl(0, 0%, 90%);
+    color: var(--bs-dark);
+}
+.btn-gray, .btn-grey{
+    background-color: hsl(208, 7%, 46%);
+    color: var(--bs-light);
+}
+.btn-gray:hover, .btn-grey:hover{
+    background-color: hsl(208, 7%, 36%);
+    color: var(--bs-light);
+}
+.btn-gray-dark, .btn-grey-dark{
+    background-color: hsl(210, 11%, 15%);
+    color: var(--bs-light);
+}
+.btn-gray-dark:hover, .btn-grey-dark:hover{
+    background-color: hsl(210, 11%, 05%);
+    color: var(--bs-light);
+}
+
+.btn-magenta, .btn-fuchsia{
+    background-color: hsl(300, 100%, 50%);
+    color: var(--bs-light);
+}
+.btn-magenta:hover, .btn-fuchsia:hover{
+    background-color: hsl(300, 100%, 43%);
+    color: var(--bs-light);
+}
+.btn-maroon{
+    background-color: hsl(0, 100%, 25%);
+    color: var(--bs-light);
+}
+.btn-maroon:hover{
+    background-color: hsl(0, 100%, 19%);
+    color: var(--bs-light);
+}
+.btn-black{
+    background-color: hsl(0, 0%, 0%);
+    color: var(--bs-light);
+}
+.btn-black:hover{
+    background-color: hsl(0, 0%, 13%);
+    color: var(--bs-light);
+}
+.btn-silver{
+    background-color: hsl(0, 0%, 75%);
+    color: var(--bs-dark);
+}
+.btn-silver:hover{
+    background-color: hsl(0, 0%, 80%);
+    color: var(--bs-dark);
+}
+.btn-aqua{
+    background-color: hsl(180, 100%, 50%);
+    color: var(--bs-dark);
+}
+.btn-aqua:hover{
+    background-color: hsl(180, 100%, 45%);
+    color: var(--bs-dark);
+}
+.btn-navy{
+    background-color: hsl(240, 100%, 25%);
+    color: var(--bs-light);
+}
+.btn-navy:hover{
+    background-color: hsl(240, 100%, 41%);
+    color: var(--bs-light);
+}
+.btn-lime{
+    background-color: hsl(120, 100%, 50%);
+    color: var(--bs-dark);
+}
+.btn-lime:hover{
+    background-color: hsl(120, 100%, 46%);
+    color: var(--bs-dark);
+}
+.btn-olive{
+    background-color: hsl(60, 100%, 25%);
+    color: var(--bs-light);
+}
+.btn-olive:hover{
+    background-color: hsl(60, 100%, 20%);
+    color: var(--bs-light);
+}
+.btn-brown{
+    background-color: hsl(25, 76%, 31%);
+    color: var(--bs-light);
+}
+.btn-brown:hover{
+    background-color: hsl(25, 76%, 23%) ;
+    color: var(--bs-light);
+}
+.btn-lavender{
+    background-color: hsl(240, 67%, 94%);
+    color: var(--bs-dark);
+}
+.btn-lavender:hover{
+    background-color: hsl(240, 67%, 91%);
+    color: var(--bs-dark);
+}
+.btn-violet{
+    background-color: hsl(300, 76%, 72%);
+    color: var(--bs-dark);
+}
+.btn-violet:hover{
+    background-color: hsl(300, 76%, 64%);
+    color: var(--bs-dark);
+}
+.btn-purple-plus{
+    background-color: hsl(291, 64%, 42%);
+    color: var(--bs-light);
+}
+.btn-purple-plus:hover{
+    background-color: hsl(291, 64%, 36%);
+    color: var(--bs-light);
+}
+.btn-red-plus{
+    background-color: hsl(0, 100%, 42%);
+    color: var(--bs-light);
+}
+.btn-red-plus:hover{
+    background-color: hsl(4, 90%, 52%);
+    color: var(--bs-light);
+}
+.btn-orange-plus{
+    background-color: hsl(14, 100%, 57%);
+    color: var(--bs-light);
+}
+.btn-orange-plus:hover{
+    background-color: hsl(16, 100%, 47%);
+    color: var(--bs-light);
+}
+
+/*************************  text  ****************************/
+
+.text-purple{
+    color: var(--bs-purple);
+}
+.text-indigo{
+    color: var(--bs-indigo);
+}
+.text-pink{
+    color: var(--bs-pink);
+}
+.text-orange{
+    color: var(--bs-orange);
+}
+.text-teal{
+    color: var(--bs-teal);
+}
+
+.text-blue{
+    color: var(--bs-blue);
+}
+.text-red{
+    color: var(--bs-red);
+}
+.text-yellow{
+    color: var(--bs-yellow);
+}
+.text-green{
+    color: var(--bs-green);
+}
+.text-cyan{
+    color: var(--bs-cyan);
+}
+.text-white{
+    color: var(--bs-white);
+}
+.text-gray, .text-grey{
+    color: var(--bs-gray);
+}
+.text-gray-dark, .text-grey-dark{
+    color: var(--bs-gray-dark);
+}
+
+.text-magenta, .text-fuchsia{
+    color: magenta;
+}
+.text-maroon{
+    color: maroon;
+}
+.text-black{
+    color: black;
+}
+.text-silver{
+    color: silver;
+}
+.text-aqua{
+    color: aqua;
+}
+.text-navy{
+    color: navy;
+}
+.text-lime{
+    color: lime;
+}
+.text-olive{
+    color: olive;
+}
+.text-brown{
+    color: SaddleBrown;
+}
+.text-lavender{
+    color: lavender;
+}
+.text-violet{
+    color: violet;
+}
+.text-purple-plus{
+    color: hsl(291, 64%, 36%);
+}
+.text-red-plus{
+    color: red;
+}
+.text-orange-plus{
+    color: hsl(14, 100%, 57%);
+}
+
+/*************************  bg  ****************************/
+
+.bg-indigo{
+    background-color: var(--bs-indigo);
+}
+.bg-purple{
+    background-color: var(--bs-purple);
+}
+.bg-pink{
+    background-color: var(--bs-pink);
+}
+.bg-orange{
+    background-color: var(--bs-orange);
+}
+.bg-teal{
+    background-color: var(--bs-teal);
+}
+
+.bg-blue{
+    background-color: var(--bs-blue);
+}
+.bg-red{
+    background-color: var(--bs-red);
+}
+.bg-yellow{
+    background-color: var(--bs-yellow);
+}
+.bg-green{
+    background-color: var(--bs-green);
+}
+.bg-cyan{
+    background-color: var(--bs-cyan);
+}
+.bg-white{
+    background-color: var(--bs-white);
+}
+.bg-gray, .bg-grey{
+    background-color: var(--bs-gray);
+}
+.bg-gray-dark, bg-grey-dark{
+    background-color: var(--bs-gray-dark);
+}
+
+.bg-magenta, .bg-fuchsia{
+    background-color: magenta;
+}
+.bg-maroon{
+    background-color: maroon;
+}
+.bg-black{
+    background-color: black;
+}
+.bg-silver{
+    background-color: silver;
+}
+.bg-aqua{
+    background-color: aqua;
+}
+.bg-navy{
+    background-color: navy;
+}
+.bg-lime{
+    background-color: lime;
+}
+.bg-olive{
+    background-color: olive;
+}
+
+.bg-brown{
+    background-color: SaddleBrown ;
+}
+.bg-lavender{
+    background-color: lavender;
+}
+.bg-violet{
+    background-color:violet;
+}
+.bg-purple-plus{
+    background-color: #9c27b0;
+}
+.bg-red-plus{
+    background-color: red;
+}
+.bg-orange-plus{
+    background-color: hsl(14, 100%, 57%);
+}
+
+.bg-sand{
+    background-color: #fdf5e6;
+}
+.bg-snow{
+    background-color: snow;
+}
+.bg-pale-blue{
+    background-color: #ddffff;
+}
+.bg-pale-red{
+    background-color: #ffdddd;
+}
+.bg-pale-yellow{
+    background-color:#ffffcc;
+}
+.bg-pale-green{
+    background-color: #ddffdd;
+}

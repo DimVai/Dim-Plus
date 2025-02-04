@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Bootstrap Plus</title>
+    <link rel="icon" type="image/png" href="bsplus.png" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script defer src="dimstrap.js"></script>
+    <!-- <script defer src="https://dimvai.github.io/dim-bootstrap-plus/dim-bootstrap-plus.js"></script> -->
+    <!-- <link href="dim-plus-colors.css" rel="stylesheet"> -->
+    <!-- <script defer src="custom-code.js"></script> -->
+
+    <style>
+        *:not(:defined) { display: none; }
+    </style>
+
+</head>
+<body class="container p-5">
+
+    <h1>Bootstrap-Plus showcase</h1>
+
+    <hr>
+
+    <h2>Icons</h2>
+    <bootstrap-icon icon="cart"></bootstrap-icon>
+    <bootstrap-icon icon="profile"></bootstrap-icon>
+    <bootstrap-icon icon="check-circle-fill"></bootstrap-icon>
+    <bootstrap-icon icon="info-circle-fill" size="3rem"></bootstrap-icon>
+    <bootstrap-icon icon="question-circle-fill"></bootstrap-icon>
+    <bootstrap-icon icon="x-circle-fill"></bootstrap-icon>
+    <bootstrap-icon icon="exclamation-triangle-fill"></bootstrap-icon>
+    <bootstrap-icon icon="burger" size="2rem"></bootstrap-icon>
+
+    <hr>
+    <h2>Modals</h2>
+
+        <div id="parentexample" class="bg-light p-2">
+            <p>This is a regular button that opens a Bootstrap-Plus modal component:
+            <button type="button" class="btn btn-info" onclick="dimstrap.showModal('myModal')">
+                Launch demo modal
+            </button></p>
+            <bootstrap-modal id="myModal" title="Modal title" body="This is the <b>modal body</b> which is an html paragraph." button="OK">
+            </bootstrap-modal>
+
+            <!--<p>This is a combined button-modal component!
+            <bootstrap-modal-button class="d-inline" modal-id="myModalWithButton" btn-class="btn-warning" btn-caption="Modal button text">
+                ['Modal title','This is the <b>modal body</b> which is a paragraph. This came from a combined button + modal component. ','OK']
+            </bootstrap-modal-button></p>
+
+            <bootstrap-close-button></bootstrap-close-button>
+            <hr> -->
+            
+        </div>
+        <hr>
+
+        <h2>Toasts</h2>
+
+        <button type="button" class="btn btn-danger m-2" onclick="dimstrap.showToast('liveToast',3)">Show ready red toast!</button>
+        <bootstrap-toast id="liveToast" color="red" title="Title of the toast" note="small note" message="This is the message of the toast."></bootstrap-toast>
+   
+
+        <hr>
+        <h2>Spinner</h2>
+        <bootstrap-spinner id="dimSpinner" color="danger" text="Waiting for something" class="m-1"></bootstrap-spinner>
+
+
+        
+        <hr>
+        <h2>Progress bar</h2>
+        <bootstrap-progress id="dimProgress" class="m-1" color="info" value="25%">This text sould not be shown</bootstrap-progress>
+        <button class="btn btn-success my-2" onclick="dimstrap.setProgress('dimProgress','95%')">Click to change the above percentage!</button>
+        <span>The command is: <code class="bg-lavender">bootstrap.setProgress('dimProgress','95%')</code></span>
+
+
+        <!-- <hr><hr> -->
+
+            
+        <!-- <a href="color-showcase.html">See also the color showcase for this add-in!</a> -->
+
+        <!-- <hr> -->
+        
+        <!-- <bootstrap-select id="myselect" class="my-1 bg-snow">[['0','select'],['1','good'],['2','mediocre'],['3','bad']]</bootstrap-select>
+
+        <div class="row mx-5 my-1">
+            <bootstrap-switch class="col" id="myswitch">
+                [['ids1','1','first option'],['ids2','2','second option','checked'],['ids3','3','third option']]
+            </bootstrap-switch>
+            <bootstrap-check class="col" id="mycheck">
+                [['idc1','1','first option'],['idc2','2','second option'],['idc3','3','third option', 'checked']]
+            </bootstrap-check>
+            <bootstrap-radio class="col" radio-name="myradio" id="myradio">
+                [['idr1','1','first option'],['idr2','2','second option'],['idr3','3','third option', 'checked']]
+            </bootstrap-radio>
+        </div> -->
+
+<!-- 
+        <hr>
+
+        <bootstrap-accordion id="dimAccordion" class="m-1">
+            [['Accordion title #1','Accordion <b>content</b> #1'],['Accordion title #2','Accordion content #2'],['Accordion title #3','Accordion content #3']]
+        </bootstrap-accordion>
+
+
+        <hr>
+
+        <bootstrap-list id="listtest" class="m-1">['An <b>item</b>','A second item','And a third one']</bootstrap-list> -->
+
+        <hr>
+
+        <div class="p-2" id="justSimpleBootstrap">
+        <p><strong>Try these commands (in browser's console or in your javascript):</strong>
+        <br> dimstrap.setProgress('dimProgress','95%')
+        <br> dimstrap.showModal('myModal')
+        <br> dimstrap.showToast('#liveToast')
+        <br> dimstrap.hide('dimAccordion')
+        
+
+
+
+        <h4>Bootstrap Components that are not initialized by default</h4>
+        <p>We initialize with easy methods:</p>
+        dimstrap.enableBootstrapTooltips() <br> dimstrap.enableBootstrapPopovers()</p>
+        <button type="button" class="btn btn-secondary" data-bs-toggle="tooltip" data-bs-placement="top" title="Tooltip on top">
+            Tooltip on top
+        </button>
+        <button type="button" class="btn btn-success" data-bs-toggle="popover" data-bs-placement="top" title="Popover title" data-bs-content="And here's some amazing content. It's very engaging. Right?">Click to toggle popover</button>
+        </div>
+        <hr>
+
+        <hr>
+
+
+        <!-- <bootstrap-carousel id="myCarousel" class="w-50">
+                [
+                    ['images/img1.jpeg','first image'],
+                    ['images/img2.jpeg','second image'],
+                    ['images/img3.jpeg','third image'],
+                    ['images/img4.jpeg','forth image'],
+                ]
+        </bootstrap-carousel> -->
+   
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+
+<script src="alpinefetch.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+
+<body>
+    
+    <div x-data="{ myData: $fetch('https://catfact.ninja/fact') }">
+        <span x-text="myData.fact">Loading...</span>
+    </div>
+    
+    
+</body>
+
+
+</html>
