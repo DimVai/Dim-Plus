@@ -71,6 +71,7 @@ a:hover{color: black}
 a:focus{outline: black solid 3px}
 
 
+
 /*********************  HEADER FOOTER   *********************/
 
 /* Header */
@@ -107,3 +108,8 @@ footer, footer p{font-size: small}
 
 /* Hide elements, for my js scripts */
 .d-none{display: none !important;}
+
+/* View transition between pages */
+@view-transition {
+    navigation: auto;
+}
