@@ -29,3 +29,4 @@ https://dimvai.github.io/Dim-Plus/dim-colors.css
 
 https://dimvai.github.io/Dim-Plus/contact-icons.css
 
+https://dimvai.github.io/Dim-Plus/dim-wordpress-admin.css
