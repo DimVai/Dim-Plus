@@ -15,7 +15,10 @@
 
 const singleDOMObjectHandler = {
     get(target, prop) {
-        if (prop in target) {
+        if (prop == 'element') {
+            return target
+        }
+        else if (prop in target) {
             return target[prop];
         } else if (prop === 'on') {
             return function(event, callback, options) {
@@ -55,9 +58,9 @@ const arrayOfDOMObjectsHandler = (selector) => {
                 return target[prop];
             } else if (prop === 'on') {
                 return function(event, callback, options) {
-                    document.addEventListener(event, (e) => {
+                    document.addEventListener(event, function(e) {
                         if (e.target.closest(selector)) {       // closest instead of matches, 
-                            callback(e);
+                            callback.call(e.target.closest(selector), e);       // callback(e), but the "this" is the element
                         }
                     }, options);
                 };
