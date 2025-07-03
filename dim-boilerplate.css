@@ -7,27 +7,55 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    font: inherit;  /* Mainly for inputs and buttons */
+    transition-behavior: allow-discrete;
 }
 
-/* Set core root defaults */
-html:focus-within {
-    scroll-behavior: smooth;
+/* Smooth transitions */
+:root {
+  interpolate-size: allow-keywords;
 }
+
+/* Use dark mode and smooth scrolling by default */
+html {
+    color-scheme: dark light; 
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+
+
+/*********************  DIM SPECIAL   *********************/
+
+/* Prevent all non-defined custom elements from displaying: */
+*:not(:defined) { display: none; }
+
+/* Hide cloaked elements for Alpine.js */
+[x-cloak] { display: none !important; }
+
+/* Hide elements, for my js scripts */
+.d-none { display: none !important; }
+
+/* View transition between pages */
+@view-transition {
+    navigation: auto;
+}
+
+
+
+/*********************    ELEMENTS    *********************/
 
 /* Remove default margin and padding */
-body,
-h1,
-h2,
-h3,
-h4,
-p,
-figure,
-blockquote,
-dl,
-dd {
+body, p {
   margin: 0;
-  padding: 0.5rem;
-  /* text-wrap: balance; */
+  padding: 0;
+  text-wrap: pretty;
+}
+h1,h2,h3,h4,
+figure,blockquote,dl,dd {
+  margin: 0;
+  padding: 0;
+  text-wrap: balance;
 }
 ol, ul, li{
     margin-block: 0;
@@ -49,14 +77,6 @@ figure {
   display: block;
   margin-inline: auto;		
   text-align: center;	/*text inside figure*/
-}
-
-/* Inherit fonts for inputs and buttons */
-input,
-button,
-textarea,
-select {
-  font: inherit;
 }
 
 /* Links */
@@ -97,19 +117,3 @@ footer, footer p{font-size: small}
 }
 
 
-
-/*********************  DIM SPECIAL   *********************/
-
-/* Prevent all non-defined custom elements from displaying: */
-*:not(:defined) { display: none; }
-
-/* Hide cloaked elements for Alpine.js */
-[x-cloak] { display: none !important; }
-
-/* Hide elements, for my js scripts */
-.d-none{display: none !important;}
-
-/* View transition between pages */
-@view-transition {
-    navigation: auto;
-}
