@@ -1,6 +1,7 @@
 
 // This is a simple Alpine.js plugin that adds a `fetch` magic property to Alpine.js components.
 // Load this script just before Alpine.js to use it.
+// Use: x-data="{ catData: $fetch('https://catfact.ninja/fact') }"
 
 document.addEventListener('alpine:init', () => {
     Alpine.magic('fetch', () => (url, options = {}) => {

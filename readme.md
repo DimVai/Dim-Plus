@@ -9,13 +9,13 @@ https://dimvai.github.io/Dim-Plus/lightgen.js
 
 https://dimvai.github.io/Dim-Plus/dimstrap.js
 
-
 https://dimvai.github.io/Dim-Plus/alpinefetch.js
 
 https://dimvai.github.io/Dim-Plus/dim-firebase.js
 
-
 https://dimvai.github.io/Dim-Plus/togreeklish.js
+
+https://dimvai.github.io/Dim-Plus/dim-worker.js
 
 
 
