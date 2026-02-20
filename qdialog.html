@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<p>Χρήση των μεθόδων Q.alert και (await) Q.confirm </p>
+
+<button onclick="Q.alert('This is a Q alert!', 'I understand')">Show Alert</button>
+<button id="showConfirmationQuestion">Show Confirm</button>
+<p id="confirmationResult"></p>
+
+
+<style>
+    dialog {
+        /* Προτεινόμενα */
+        border: 1px solid darkgray;
+        padding: 1rem 1.3rem;
+        border-radius: 0.5rem;
+        min-width: min(40ch, 80vw);
+        max-width: 80vw;
+        margin-top: 10vh;   /* Πόσο ψηλά εμφανίζεται */
+        &::backdrop {
+            background: rgba(0, 0, 0, 0.2);
+        }
+        button{
+            margin: 0.5rem;
+            min-width: 10ch;
+        }
+        div {
+            display: flex;
+            justify-content: flex-end;
+        }
+        p {
+            margin: 0 0 1rem 0;
+        }
+        /* Προαιρετικά αν δεν καλύπτοναι από κάποιο framework */
+        button{
+            padding: 0.5rem 1rem;
+            border-radius: 0.3rem;
+        }
+        div {
+            button:nth-child(1) {
+                background-color: #007bff;
+                color: white;
+                border: none;
+            }
+            button:nth-child(2) {
+                background-color: #6c757d;
+                color: white;
+                border: none;
+            }
+        }
+    }
+</style>
+
+
+<script src="Q.js"></script>
+<script>
+
+</script>
+
+<script>
+    Q('#showConfirmationQuestion').on('click', async function() {
+        let usersChoice = await Q.confirm('Do you confirm this action?', 'Yes', 'No');    // returns true or false
+        Q('#confirmationResult').set('User choice: ' + usersChoice);
+    });
+</script>

@@ -4,7 +4,6 @@
  * @copyright Dimitris Vainanidis, 2024
  */
 
-/* jshint ignore:start */
 'use strict';
 
 {
@@ -49,7 +48,7 @@ const singleDOMObjectHandler = {
     set(target, prop, value) {
         if (prop in target) {
             target[prop] = value;
-            return value;
+            return true;   // must not return false ever, otherwise it will throw an error in strict mode.
         }
         return false;
     }
@@ -90,7 +89,7 @@ const arrayOfDOMObjectsHandler = (selector) => {
         set(target, prop, value) {
             if (prop in target) {
                 target[prop] = value;
-                return value;
+                return true;   // must not return false ever, otherwise it will throw an error in strict mode.
             }
             return false;
         }
@@ -213,7 +212,46 @@ Q.euro = price => (price==null||isNaN(price)) ? "- €" : (new Intl.NumberFormat
 
 
 
+Q.alert = function(message, closeText) {
+    if (!Q('#qAlertDialog')) {
+        const dialog = document.createElement('dialog');
+        dialog.id = 'qAlertDialog';
+        dialog.innerHTML = '<p></p><div><button id="qAlertCloseButton"></button></div>';
+        document.body.appendChild(dialog);
+        Q('#qAlertCloseButton').on('click', function() {
+            Q('#qAlertDialog').close();
+        });
+    }
+    Q('#qAlertDialog p').set(message);
+    Q('#qAlertCloseButton').set(closeText || 'Close');
+    Q('#qAlertDialog').showModal();
+};
+Q.confirm = function(message, okText, cancelText) {
+    if (!Q('#qConfirmDialog')) {
+        const dialog = document.createElement('dialog');
+        dialog.id = 'qConfirmDialog';
+        dialog.innerHTML = '<p></p><div><button id="qConfirmOkButton"></button><button id="qConfirmCancelButton"></button></div>';
+        document.body.appendChild(dialog);
+        Q('#qConfirmOkButton').on('click', function() {
+            Q('#qConfirmDialog').close();
+            Q.confirm.result = true;
+        });
+        Q('#qConfirmCancelButton').on('click', function() {
+            Q('#qConfirmDialog').close();
+            Q.confirm.result = false;
+        });
+    }
+    Q('#qConfirmDialog p').set(message);
+    Q('#qConfirmOkButton').set(okText || 'OK');
+    Q('#qConfirmCancelButton').set(cancelText || 'Cancel');
+    Q('#qConfirmDialog').showModal();
+    return new Promise(function(resolve) {
+        Q('#qConfirmDialog').addEventListener('close', function() {
+            resolve(Q.confirm.result);
+        }, { once: true });
+    });
 
+};
 
 
 
