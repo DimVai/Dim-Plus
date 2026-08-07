@@ -117,3 +117,40 @@ footer, footer p{font-size: small}
 }
 
 
+
+/*********************  HTML ATTRIBUTES   *********************/
+
+[data-style-color] { color: attr(data-style-color type(<color>)) }
+[data-style-background-color] { background-color: attr(data-style-background-color type(<color>)) }
+[data-style-border-color] { border-color: attr(data-style-border-color type(<color>)) }
+[data-style-font-size] { font-size: attr(data-style-font-size type(<length-percentage>)) }
+[data-style-min-width] { min-width: attr(data-style-min-width type(<length-percentage>)) }
+[data-style-min-height] { min-height: attr(data-style-min-height type(<length-percentage>)) }
+
+/* [data-style-button] { color: attr(data-style-button type(<color>)) } */
+
+
+.btn[data-style-button] {
+    /* color: attr(data-style-button type(<color>)); */
+  --button-color: attr(data-style-button type(<color>));
+
+  --bs-btn-color: var(--bs-light);
+  --bs-btn-bg: var(--button-color);
+  --bs-btn-border-color: var(--button-color);
+
+  --bs-btn-hover-color: var(--bs-light);
+  --bs-btn-hover-bg:
+    oklch(from var(--button-color) calc(l - 0.08) c h);
+  --bs-btn-hover-border-color:
+    oklch(from var(--button-color) calc(l - 0.08) c h);
+
+  --bs-btn-active-color: var(--bs-light);
+  --bs-btn-active-bg:
+    oklch(from var(--button-color) calc(l - 0.12) c h);
+  --bs-btn-active-border-color:
+    oklch(from var(--button-color) calc(l - 0.12) c h);
+
+  --bs-btn-disabled-color: var(--bs-light);
+  --bs-btn-disabled-bg: var(--button-color);
+  --bs-btn-disabled-border-color: var(--button-color);
+}

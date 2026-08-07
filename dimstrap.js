@@ -77,7 +77,7 @@ let dimstrap = {       // bootstrap is reserved for... Bootstrap!
 class BootstrapIcon extends HTMLElement {
     constructor(){
         super();
-        let size = this.getAttribute('size')||"1rem";
+        let size = this.getAttribute('size')||"1.2rem";
         let icon = this.getAttribute('icon')||"";
         switch (icon) {
             case 'cart':
@@ -153,9 +153,9 @@ class BootstrapProgress extends HTMLElement {
             let percentage = this.getAttribute('value');
             let bgColor = this.getAttribute('color') ? 'bg-' + this.getAttribute('color') : "";
             this.innerHTML = /*html*/`
-            <div class="progress">
-                <div ${identity} class="progress-bar progress-bar-striped ${bgColor}" role="progressbar" style="width: ${percentage}"></div>
-            </div>
+                <div class="progress">
+                    <div ${identity} class="progress-bar progress-bar-striped ${bgColor}" role="progressbar" style="width: ${percentage}"></div>
+                </div>
             `;
             this.classList.add("d-block");
         }
@@ -167,15 +167,15 @@ window.customElements.define('bootstrap-progress', BootstrapProgress);
 class BootstrapSpinner extends HTMLElement {
     constructor(){
         super(); 
-        let text = this.getAttribute('text') ?? 'Loading';
+        let text = this.getAttribute('text') ?? '';
         this.classList.add("d-block");
         this.innerHTML = /*html*/`
-        <div class="d-flex flex-column align-items-center">
-            <div class="spinner-border text-${this.getAttribute('color')||'dark'} m-2" role="status">
-                <span class="visually-hidden">${text}</span>
+            <div class="d-flex flex-column align-items-center">
+                <div class="spinner-border text-${this.getAttribute('color')||'dark'} m-2" role="status">
+                    <span class="visually-hidden">${text}</span>
+                </div>
+                <div>${text}</div>
             </div>
-            <div>${text}</div>
-        </div>
         `;
     }
 }
@@ -199,7 +199,7 @@ class BootstrapToast extends HTMLElement {
                     <div class="toast-body">${this.getAttribute('message')}</div>
                 </div>
             </div>
-            `;
+        `;
     }
 }
 window.customElements.define('bootstrap-toast',BootstrapToast);

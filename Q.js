@@ -105,7 +105,7 @@ const arrayOfDOMObjectsHandler = (selector) => {
  * @type {(selector: string) => HTMLElement | HTMLElement[]}
 */
 function Q (selector) {         // Χρήση function declaretion (όχι πχ expression / arrow function) για να παίζουν τα JsDoc των methods παρακάτω
-    if ( selector.charAt(0)=='#' ) {  
+    if ( selector.charAt(0)=='#' && !selector.includes(' ')) {  
         const element = document.querySelector(selector);
         if (!element) {return null}
         return new Proxy(element, singleDOMObjectHandler);
@@ -212,7 +212,7 @@ Q.euro = price => (price==null||isNaN(price)) ? "- €" : (new Intl.NumberFormat
 
 
 
-Q.alert = function(message, closeText) {
+Q.alert = function(message, closeText='Close') {
     if (!Q('#qAlertDialog')) {
         const dialog = document.createElement('dialog');
         dialog.id = 'qAlertDialog';
@@ -223,14 +223,14 @@ Q.alert = function(message, closeText) {
         });
     }
     Q('#qAlertDialog p').set(message);
-    Q('#qAlertCloseButton').set(closeText || 'Close');
+    Q('#qAlertCloseButton').set(closeText);
     Q('#qAlertDialog').showModal();
 };
-Q.confirm = function(message, okText, cancelText) {
+Q.confirm = function(message, okText='OK', cancelText='Cancel') {
     if (!Q('#qConfirmDialog')) {
         const dialog = document.createElement('dialog');
         dialog.id = 'qConfirmDialog';
-        dialog.innerHTML = '<p></p><div><button id="qConfirmOkButton"></button><button id="qConfirmCancelButton"></button></div>';
+        dialog.innerHTML = '<p></p><div><button class="" id="qConfirmOkButton"></button><button id="qConfirmCancelButton"></button></div>';
         document.body.appendChild(dialog);
         Q('#qConfirmOkButton').on('click', function() {
             Q('#qConfirmDialog').close();
@@ -242,8 +242,8 @@ Q.confirm = function(message, okText, cancelText) {
         });
     }
     Q('#qConfirmDialog p').set(message);
-    Q('#qConfirmOkButton').set(okText || 'OK');
-    Q('#qConfirmCancelButton').set(cancelText || 'Cancel');
+    Q('#qConfirmOkButton').set(okText);
+    Q('#qConfirmCancelButton').set(cancelText);
     Q('#qConfirmDialog').showModal();
     return new Promise(function(resolve) {
         Q('#qConfirmDialog').addEventListener('close', function() {
